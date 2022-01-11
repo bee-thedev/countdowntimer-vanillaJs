@@ -9,7 +9,7 @@
 <body>
     <!-------------------- Background ---------------------->
     <video class="bg-video" id="bg-video" loop autoplay muted>
-        <source src="./video/red.mp4"></source>
+        <source src="./video/Ink.mp4"></source>
     </video>
     <div class="overlay-video"></div>
 
@@ -25,7 +25,13 @@
                 <input type="text" id="event" placeholder="What is the occasion?!?">
                 <label for="picker">Select a date</label>
                 <input type="date" id="picker">
-                <button type="submit">Submit</button>
+                <!-- <button type="submit" class="sub-button">Submit</button> -->
+                <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">C o n t i n u e</span>
+                  </button>
             </form>     
         </div>
 
@@ -51,7 +57,24 @@
         </div>
     </div>
 
+    <button id="myBtn"></button>
     <!---------------    Functionality --------------------------->
     <script src="./js/timer.js"></script>
+
+    <script>
+        var video = document.getElementById("bg-video");
+        var btn = document.getElementById("myBtn");
+        
+        function myFunction() {
+          if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+          } else {
+            video.pause();
+            btn.innerHTML = "Play";
+          }
+        }
+        </script>
+        
 </body>
 </html>
