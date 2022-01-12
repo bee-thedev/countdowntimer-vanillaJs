@@ -185,3 +185,139 @@ button {
  button:hover .button-text {
   color: #fff;
  }
+
+ /*-------------- CountDown Section ----------------*/
+
+ ul{
+   margin-left: -45px;
+ }
+
+ li{
+   display: inline-block;
+   text-align: center;
+   padding: 20px;
+   font-size: 2.5rem;
+   list-style-type: none;
+   text-transform: uppercase;
+ }
+
+li span{
+  display: block;
+  font-size: 80px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.countdown-header{
+  padding-bottom: 30px;
+}
+
+
+/* ------------- After Completion Section --------------*/
+
+
+.countdown-complete{
+  position: relative;
+  top: 60px;
+}
+
+.countdown-complete_title{
+  animation: complete 4s infinite;
+}
+
+@keyframes complete{
+  0%{
+    color:rgb(24, 77, 138);
+  }
+
+  25%{
+    color:rgb(214, 66, 21);
+  }
+
+  50%{
+    color:rgb(24, 77, 138);
+    transform: scale(1.5);
+  }
+
+  75%{
+    color:rgb(223, 100, 18);
+  }
+
+  100%{
+    color:rgb(24, 77, 138);
+  }
+}
+
+
+p {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 6px;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgb(24, 77, 138), #fff, rgb(192, 132, 20));
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(99, 53, 10, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+@media screen  and (max-width: 1024px){
+  video{
+    object-fit: cover;
+    object-position: 70%;
+    margin-top: -1px;
+}
+
+  .bg-video{
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .container{
+    min-width: unset;
+    width: 95vw;
+    min-height: 245px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .input-section{
+    top: unset;
+  }
+
+  .countdown-complete{
+    position: relative;
+    top: 10px;
+  }
+
+  .form{
+    width: unset;
+  }
+
+  input{
+    width: 93%;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 15px;
+  }
+
+  li span {
+    font-size: 40px;
+  }
+}
