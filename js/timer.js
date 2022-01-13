@@ -1,12 +1,12 @@
 /* ---------------- Constants for the Input CARD ---------------*/
 
-const inputSelection = document.getElementById('input-selection');
+const inputSection = document.getElementById('input-section');
 const inputForm = document.getElementById('inputForm');
 const datePicker = document.getElementById('picker');
 
 /* ----------------- Constants for the CountDown card -------------------*/
 
-const countdownEle= document.getElementById('countdown');
+const countdownElement= document.getElementById('countdown');
 const countdownHeader = document.getElementById('countdown-header');
 const countdownButton = document.getElementById('countdown-button');
 const timeSpreader = document.querySelectorAll('span');
@@ -50,11 +50,11 @@ function updateDom(){
         const seconds = Math.floor((distance % minute) / second);
 
         /*  Once the counter is placed for the Event the input gooes into Hiding */
-        inputSelection.hidden = true;
+        inputSection.hidden = true;
         
         /* When the countdown goes into completion */
         if (distance < 0){
-            countdownEle.hidden = true;
+            countdownElement.hidden = true;
             clearInterval(countdownActive);
             completeInfo.textContent = `${countdownTitle} finished on ${countdownDate}`;
             completeElement.hidden = false;
@@ -67,7 +67,7 @@ function updateDom(){
             timeSpreader[2].textContent = `${minutes}`;
             timeSpreader[3].textContent = `${seconds}`;
             completeElement.hidden = true;
-            countdownEle.hidden = false;
+            countdownElement.hidden = false;
         }
     }, second);
 }
@@ -79,8 +79,8 @@ function countdownUpdated(e){
 
     /* ----------- Saving data to local storage ------------------*/
 
-    countdownTitle = e.srcElement[0].value;
-    countdownDate = e.srcElement[1].value;
+    countdownTitle = e.target[0].value;
+    countdownDate = e.target[1].value;
     countdownSaved = {
         title: countdownTitle,
         date: countdownDate,
@@ -106,9 +106,9 @@ function countdownUpdated(e){
 function resetCountdown(){
     /* ------ Takes you back to the INPUT FORM  ---------------*/
 
-    countdownEle.hidden = true;
+    countdownElement.hidden = true;
     completeElement.hidden = true;
-    inputSelection.hidden = false;
+    inputSection.hidden = false;
 
     /* ------------Stop the countdown timer ---------------*/
     clearInterval(countdownActive);
@@ -124,7 +124,7 @@ function resetCountdown(){
 
 function restorePreviousSession(){
     if(localStorage.getItem('countdown')){
-        inputSelection.hidden = true;
+        inputSection.hidden = true;
         countdownSaved = JSON.parse(localStorage.getItem('countdown'));
         countdownTitle = countdownSaved.title;
         countdownDate = countdownSaved.date;
@@ -137,29 +137,10 @@ function restorePreviousSession(){
 /* ------------------ Event Activation -----------------------*/
 
 inputForm.addEventListener('submit', countdownUpdated);
-countdownEle.addEventListener('click', resetCountdown);
+countdownElement.addEventListener('click', resetCountdown);
 completeButton.addEventListener('click', resetCountdown);
 
 
 /* ------------------ On Refresh to check the localstorage FIRST ---------------*/
 
 restorePreviousSession();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
