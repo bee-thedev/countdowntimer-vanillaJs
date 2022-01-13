@@ -94,9 +94,216 @@ input{
 
 /* ------- Buttons Styling -----------*/
 
-/* button{
-  
+
+
+
+button {
+  width: 100%;
+  height: 45px;
+  margin-top: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+button:hover {
+  background-color: rgb(23, 96, 207);
+  box-shadow: 0px 15px 20px rgba(23, 96, 207, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+ 
+
+/*-------------- CountDown Section ----------------*/
+
+ul{
+  margin-left: -45px;
+}
+
+li{
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5rem;
+  list-style-type: none;
+  text-transform: uppercase;
+  color: rgb(214, 66, 21);
+}
+
+li span{
+ display: block;
+ font-size: 80px;
+ text-align: center;
+ font-weight: 600;
+}
+
+.countdown-header{
+ padding-bottom: 30px;
+}
+
+
+/* ------------- After Completion Section --------------*/
+
+
+.countdown-complete{
+ position: relative;
+ top: 60px;
+}
+
+.countdown-complete_title{
+ animation: complete 4s infinite;
+}
+
+@keyframes complete{
+ 0%{
+   color:rgb(24, 77, 138);
+ }
+
+ 25%{
+   color:rgb(214, 66, 21);
+ }
+
+ 50%{
+   color:rgb(24, 77, 138);
+   transform: scale(1.5);
+ }
+
+ 75%{
+   color:rgb(223, 100, 18);
+ }
+
+ 100%{
+   color:rgb(24, 77, 138);
+ }
+}
+
+/* --------------- Screen Size --------------------*/
+
+@media screen  and (max-width: 1024px){
+ video{
+   object-fit: cover;
+   object-position: 70%;
+   margin-top: -1px;
+}
+
+ .bg-video{
+   height: 100vh;
+   width: 100vw;
+ }
+
+ .container{
+   min-width: unset;
+   width: 95vw;
+   min-height: 245px;
+   padding: 20px;
+   margin: 10px;
+ }
+
+ .input-section{
+   top: unset;
+ }
+
+ .countdown-complete{
+   position: relative;
+   top: 10px;
+ }
+
+ .form{
+   width: unset;
+ }
+
+ input{
+   width: 93%;
+ }
+
+ h1 {
+   font-size: 20px;
+ }
+
+ li {
+   font-size: 15px;
+ }
+
+ li span {
+   font-size: 40px;
+ }
+}
+/* button {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 15px;
+  border: none;
+  text-transform: uppercase;
+  background: #1761d1;
+  color: whitesmoke;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+}
+
+button:hover {
+  filter: brightness(120%);
+  transform: scale(1.1);
 } */
+
+/* button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
+}
+button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1761d1;
+  border-radius: 10rem;
+  z-index: -2;
+}
+button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(238, 238, 238,1);
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+button:hover {
+  color: #07090e;
+}
+button:hover:before {
+  width: 100%;
+} */
+
+/* 
 
 button {
   position: relative;
@@ -184,140 +391,6 @@ button {
  
  button:hover .button-text {
   color: #fff;
- }
+ } */
 
- /*-------------- CountDown Section ----------------*/
-
- ul{
-   margin-left: -45px;
- }
-
- li{
-   display: inline-block;
-   text-align: center;
-   padding: 20px;
-   font-size: 2.5rem;
-   list-style-type: none;
-   text-transform: uppercase;
- }
-
-li span{
-  display: block;
-  font-size: 80px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.countdown-header{
-  padding-bottom: 30px;
-}
-
-
-/* ------------- After Completion Section --------------*/
-
-
-.countdown-complete{
-  position: relative;
-  top: 60px;
-}
-
-.countdown-complete_title{
-  animation: complete 4s infinite;
-}
-
-@keyframes complete{
-  0%{
-    color:rgb(24, 77, 138);
-  }
-
-  25%{
-    color:rgb(214, 66, 21);
-  }
-
-  50%{
-    color:rgb(24, 77, 138);
-    transform: scale(1.5);
-  }
-
-  75%{
-    color:rgb(223, 100, 18);
-  }
-
-  100%{
-    color:rgb(24, 77, 138);
-  }
-}
-
-
-p {
-  position: relative;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  letter-spacing: 6px;
-  overflow: hidden;
-  background: linear-gradient(90deg, rgb(24, 77, 138), #fff, rgb(192, 132, 20));
-  background-repeat: no-repeat;
-  background-size: 80%;
-  animation: animate 3s linear infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(99, 53, 10, 0);
-}
-
-@keyframes animate {
-  0% {
-    background-position: -500%;
-  }
-  100% {
-    background-position: 500%;
-  }
-}
-
-@media screen  and (max-width: 1024px){
-  video{
-    object-fit: cover;
-    object-position: 70%;
-    margin-top: -1px;
-}
-
-  .bg-video{
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .container{
-    min-width: unset;
-    width: 95vw;
-    min-height: 245px;
-    padding: 20px;
-    margin: 10px;
-  }
-
-  .input-section{
-    top: unset;
-  }
-
-  .countdown-complete{
-    position: relative;
-    top: 10px;
-  }
-
-  .form{
-    width: unset;
-  }
-
-  input{
-    width: 93%;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  li {
-    font-size: 15px;
-  }
-
-  li span {
-    font-size: 40px;
-  }
-}
+ 
